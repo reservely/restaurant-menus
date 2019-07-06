@@ -1,8 +1,8 @@
-# Menu module
+# Restaurant Menus module
 
 What are your service's inputs and outputs (API Spec)?
 
-`GET /:restaurant_id/menu/`
+`GET /:restaurant_id/restaurant_menus/`
 
 **Input**: `restaurant_id` identifies which restaurant to get menus
 
