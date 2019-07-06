@@ -46,7 +46,7 @@ What are your service's inputs and outputs (API Spec)?
     - If you click “Expand” it will switch to “Collapse” and float on bottom of page before being anchored to bottom if you scroll to the end of menu
 
 ### Data Schema:
-MongoDB is being used. A database with the capability of having a dynamic/versatile schema was preferred because there is menu structure variability among the different restaurants throughout OpenTable.
+MongoDB is being used. A database with the capability of having a dynamic/versatile schema was preferred because there is menu structure variability among the different restaurants.
 
 Mongoose Schema
 ```
@@ -57,15 +57,16 @@ let menuSchema = new mongoose.Schema({
     menu_name: String,
     menu_description: String,
     sections: [{
-                section_name: String,
-                section_description: String,
-                items: [{
-                         item_name: String,
-                         item_description: String,
-                         item_price: Number,
-                         item_option: String
-                }]
-              }]
+      section_name: String,
+      section_description: String,
+      items: [{
+        item_name: String,
+        item_description: String,
+        item_price: Number,
+        item_option: String
+      }]                      
+    }]
+  }]
 });
 ```
 
