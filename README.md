@@ -10,22 +10,22 @@ What are your service's inputs and outputs (API Spec)?
 
 ```
 {
-  “restaurant_id”: <number>,
-  "website": <string>,
-  “menus”: [{
-             “menu_name”: <string>,
-             “menu_description”: <string>,
-             “sections”: [{
-                           “section_name”: <string>,
-                           “section_description”: <string>,
-                           “items”: [{
-                                      “item_name”: <string>,
-                                      “item_description”: <string>,
-                                      “item_price”: <number>,
-                                      “item_option”: <string>
-                                     }, … ] 
-                          }, … ]
-            }, … ]
+“restaurant_id”: <number>,
+"website": <string>,
+“menus”: [{
+  “menu_name”: <string>,
+  “menu_description”: <string>,
+  “sections”: [{
+    “section_name”: <string>,
+    “section_description”: <string>,
+    “items”: [{
+      “item_name”: <string>,
+      “item_description”: <string>,
+      “item_price”: <number>,
+      “item_option”: <string>
+      }, … ] 
+  }, … ]
+}, … ]
 }
 ```
 

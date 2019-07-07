@@ -17,29 +17,29 @@ for (let i = 0; i <= 100; i += 1) {
           item_name: faker.commerce.productName(),
           item_description: faker.lorem.sentence(3),
           item_price: faker.commerce.price(1, 100.00, 2, '$'),
-          item_option: faker.lorem.words(1)
+          item_option: faker.lorem.words(1),
         });
       }
       sectionsArray.push(
         {
           section_name: faker.lorem.words(1),
           section_description: faker.lorem.sentence(3),
-          items: itemsArray
-        }
+          items: itemsArray,
+        },
       );
     }
     menusArray.push(
       {
         menu_name: faker.commerce.productAdjective(),
         menu_description: faker.lorem.sentence(3),
-        sections: sectionsArray
-      }
-    )
+        sections: sectionsArray,
+      },
+    );
   }
   Restaurant.create({
     restaurant_id: i,
     website: faker.internet.url(),
-    menus: menusArray
+    menus: menusArray,
   }, (err, doc) => {
     if (err) {
       console.log(err);
