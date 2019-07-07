@@ -10,7 +10,7 @@
     "test": "jest",
     "react-dev": "webpack -d --watch",
     "server": "nodemon server/index.js",
-    "seed": "node db/seed.js"
+    "seed": "node ./db/seed.js"
   },
   "dependencies": {
     "body-parser": "^1.17.0",
