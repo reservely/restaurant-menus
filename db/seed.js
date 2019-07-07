@@ -1,5 +1,4 @@
 const faker = require('faker');
-const db = require('./index.js');
 const Restaurant = require('./Restaurant.js');
 
 
@@ -40,7 +39,7 @@ for (let i = 0; i <= 100; i += 1) {
     restaurant_id: i,
     website: faker.internet.url(),
     menus: menusArray,
-  }, (err, doc) => {
+  }, (err) => {
     if (err) {
       console.log(err);
     }
