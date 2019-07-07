@@ -1,6 +1,6 @@
 import React from 'react';
 
-class RestaurantMenus extends React.Component {
+class RestaurantMenu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,4 +18,4 @@ class RestaurantMenus extends React.Component {
   }
 }
 
-export default RestaurantMenus;
+export default RestaurantMenu;
