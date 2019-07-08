@@ -44,12 +44,16 @@ for (let i = 1; i <= 100; i += 1) {
   });
 }
 
-Restaurant.insertMany(restaurantsArray)
-  .then((docs) => {
-    console.log(`Successfully added ${docs.length} restaurants to database.`);
-    db.close();
-  })
-  .catch((err) => {
-    console.log(`Failed to add restaurants to database: ${err}`);
-    db.close();
-  });
+function seedRestaurantMenus() {
+  Restaurant.insertMany(restaurantsArray)
+    .then((docs) => {
+      console.log(`Successfully added ${docs.length} restaurants to database.`);
+      db.close();
+    })
+    .catch((err) => {
+      console.log(`Failed to add restaurants to database: ${err}`);
+      db.close();
+    });
+}
+
+seedRestaurantMenus();
