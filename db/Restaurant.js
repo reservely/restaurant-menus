@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-// eslint-disable-next-line no-unused-vars
-const db = require('./index.js');
 
+const mongoUri = 'mongodb://localhost/reservly';
+mongoose.connect(mongoUri, { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 
 const restaurantSchema = new mongoose.Schema({

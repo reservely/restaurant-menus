@@ -1,8 +1,10 @@
 const faker = require('faker');
+const db = require('./index.js');
 const Restaurant = require('./Restaurant.js');
 
+const restaurantsArray = [];
 
-for (let i = 0; i <= 100; i += 1) {
+for (let i = 1; i <= 100; i += 1) {
   const menusArray = [];
   const menuCount = faker.random.number({ min: 0, max: 6 });
   for (let j = 0; j < menuCount; j += 1) {
@@ -35,16 +37,19 @@ for (let i = 0; i <= 100; i += 1) {
       },
     );
   }
-  Restaurant.create({
+  restaurantsArray.push({
     restaurant_id: i,
     website: faker.internet.url(),
     menus: menusArray,
-  }, (err) => {
-    if (err) {
-      console.log(err);
-    }
   });
 }
 
-
-console.log('Menus for 100 restaurants have been generated.');
+Restaurant.insertMany(restaurantsArray)
+  .then((docs) => {
+    console.log(`Successfully added ${docs.length} restaurants to database.`);
+    db.close();
+  })
+  .catch((err) => {
+    console.log(`Failed to add restaurants to database: ${err}`);
+    db.close();
+  });
