@@ -3,16 +3,18 @@ const db = require('./index.js');
 const Restaurant = require('./Restaurant.js');
 
 const restaurantsArray = [];
+const menuOptions = ['Breakfast Menu', 'Brunch Menu', 'Lunch Menu', 'Dinner Menu', 'Dessert', 'Bar Menu'];
 
 for (let i = 1; i <= 100; i += 1) {
   const menusArray = [];
   const menuCount = faker.random.number({ min: 0, max: 6 });
+
   for (let j = 0; j < menuCount; j += 1) {
     const sectionsArray = [];
     const sectionCount = faker.random.number({ min: 1, max: 6 });
     for (let k = 0; k < sectionCount; k += 1) {
       const itemsArray = [];
-      const itemCount = faker.random.number({ min: 1, max: 6 });
+      const itemCount = faker.random.number({ min: 1, max: 10 });
       for (let l = 0; l < itemCount; l += 1) {
         itemsArray.push({
           item_name: faker.commerce.productName(),
@@ -23,7 +25,7 @@ for (let i = 1; i <= 100; i += 1) {
       }
       sectionsArray.push(
         {
-          section_name: faker.lorem.words(1),
+          section_name: faker.name.lastName(),
           section_description: faker.lorem.sentence(3),
           items: itemsArray,
         },
@@ -31,7 +33,7 @@ for (let i = 1; i <= 100; i += 1) {
     }
     menusArray.push(
       {
-        menu_name: faker.commerce.productAdjective(),
+        menu_name: menuOptions[j],
         menu_description: faker.lorem.sentence(3),
         sections: sectionsArray,
       },
