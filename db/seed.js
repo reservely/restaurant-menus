@@ -8,11 +8,11 @@ const randomMenuData = [
   'Breakfast Menu', 'Brunch Menu', 'Lunch Menu', 'Dinner Menu',
   'Dessert', 'Bar Menu', 'Kid\'s Menu', 'Vegetarian Menu',
   'Organic Menu', 'Gluten-free Menu', 'Cocktails', 'Drinks',
-  'Luxury Menu', 'Special Menu', 'Secret Menu', 'Prix Fixe',
+  'Kosher Menu', 'Halal Menu', 'Secret Menu', 'Prix Fixe',
   'Low Sugar Menu', 'Tapas', 'Delivery Menu', 'Happy Hour',
   'Late Night Menu', 'Exotic Menu', 'Bizarre Menu', 'Snacks',
-  'Senior Menu', 'Soylent Menu', 'Healthy Menu', 'Wine List',
-  'Chef\'s Specials', 'Dog Menu', 'Catering Menu', 'Microwaved',
+  'Senior Menu', 'Microwaved', 'Healthy Menu', 'Wine List',
+  'Chef\'s Specials', 'Dog Menu', 'Catering Menu', 'Grilled',
 ];
 
 function shuffle(a) {
