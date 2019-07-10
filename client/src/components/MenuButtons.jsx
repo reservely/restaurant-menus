@@ -7,4 +7,5 @@ const MenuButtons = props => (
   ))
 );
 
+MenuButtons.defaultProps = { menus: [] };
 export default MenuButtons;

@@ -37,12 +37,10 @@ class RestaurantMenus extends React.Component {
 
   render() {
     const { restaurantData, currentMenu } = this.state;
-    const menus = restaurantData.menus ? restaurantData.menus : [];
     return (
       <div>
         <MenuButtons
-          menus={menus}
-          restaurantData={restaurantData}
+          menus={restaurantData.menus}
           onClick={() => (this.handleClick)}
         />
         <CurrentMenu currentMenu={currentMenu} />

@@ -6,17 +6,18 @@ const CurrentMenu = (props) => {
   const curr = currentMenu.map(menu => (
     <div key={menu.section_name}>
       { menu.section_name }
-      <br />
-      { menu.section_description }
-      { menu.items.map(item => (
-        <div key={item.item_name}>
-          {item.item_name}
-          <br />
-          {item.item_description}
-          <br />
-          {item.item_price}
-        </div>
-      ))}
+      <div>
+        { menu.section_description }
+        { menu.items.map(item => (
+          <div key={item.item_name}>
+            {item.item_name}
+            <div>
+              {item.item_description}
+            </div>
+            {item.item_price}
+          </div>
+        ))}
+      </div>
     </div>
   ));
 
@@ -28,7 +29,8 @@ const CurrentMenu = (props) => {
 };
 
 CurrentMenu.propTypes = {
-  currentMenu: PropTypes.node,
+  // eslint-disable-next-line react/forbid-prop-types
+  currentMenu: PropTypes.any,
 };
 CurrentMenu.defaultProps = { currentMenu: [] };
 export default CurrentMenu;
