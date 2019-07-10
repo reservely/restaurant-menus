@@ -3,12 +3,57 @@ const db = require('./index.js');
 const Restaurant = require('./Restaurant.js');
 
 const restaurantsArray = [];
-const menuOptions = ['Breakfast Menu', 'Brunch Menu', 'Lunch Menu', 'Dinner Menu', 'Dessert', 'Bar Menu'];
 
-for (let i = 1; i <= 100; i += 1) {
+const randomMenuData = [
+  'Breakfast Menu',
+  'Brunch Menu',
+  'Lunch Menu',
+  'Dinner Menu',
+  'Dessert',
+  'Bar Menu',
+  'Kid\'s Menu',
+  'Vegetarian Menu',
+  'Organic Menu',
+  'Gluten-free Menu',
+  'Cocktail Menu',
+  'Luxury Menu',
+  'Special Menu',
+  'Secret Menu',
+  'Sugar-free Menu',
+  'Tapas',
+  'Delivery Menu',
+  'Late Night Menu',
+  'Exotic Menu',
+  'Bizarre Menu',
+  'Senior Menu',
+  'Soylent Menu',
+  'Healthy Menu',
+  'Chef\'s Specials',
+  'Dog Menu',
+];
+
+function shuffle(a) {
+  const shuffledArray = a;
+  let j;
+  let x;
+  let i;
+  for (i = shuffledArray.length - 1; i > 0; i -= 1) {
+    j = Math.floor(Math.random() * (i + 1));
+    x = shuffledArray[i];
+    shuffledArray[i] = shuffledArray[j];
+    shuffledArray[j] = x;
+  }
+  return shuffledArray;
+}
+
+
+for (let i = 0; i < 100; i += 1) {
   const menusArray = [];
   const menuCount = faker.random.number({ min: 0, max: 6 });
-
+  let randomMenuDataShuffled = [];
+  if (menuCount > 0) {
+    randomMenuDataShuffled = shuffle(randomMenuData);
+  }
   for (let j = 0; j < menuCount; j += 1) {
     const sectionsArray = [];
     const sectionCount = faker.random.number({ min: 1, max: 6 });
@@ -33,7 +78,7 @@ for (let i = 1; i <= 100; i += 1) {
     }
     menusArray.push(
       {
-        menu_name: menuOptions[j],
+        menu_name: randomMenuDataShuffled[j],
         menu_description: faker.lorem.sentence(3),
         sections: sectionsArray,
       },
