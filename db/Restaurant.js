@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
-const db = require('./index.js');
 
+const mongoUri = 'mongodb://localhost/reservly';
+mongoose.connect(mongoUri, { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 
 const restaurantSchema = new mongoose.Schema({
