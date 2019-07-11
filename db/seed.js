@@ -7,8 +7,8 @@ const restaurantsArray = [];
 const randomMenuData = [
   'Breakfast Menu', 'Brunch Menu', 'Lunch Menu', 'Dinner Menu',
   'Dessert', 'Bar Menu', 'Kid\'s Menu', 'Vegetarian Menu',
-  'Organic Menu', 'Gluten-free Menu', 'Cocktails', 'Drinks',
-  'Kosher Menu', 'Halal Menu', 'Secret Menu', 'Prix Fixe',
+  'Organic Menu', 'Seasonal Menu', 'Cocktails', 'Drinks',
+  'Kosher Menu', 'Halal Menu', 'Secret Menu', 'Party Menu',
   'Leftovers', 'Tapas', 'Delivery Menu', 'Happy Hour',
   'Late Night Menu', 'Exotic Menu', 'Bizarre Menu', 'Snacks',
   'Senior Menu', 'Microwaved', 'Healthy Menu', 'Wine List',
@@ -47,7 +47,7 @@ for (let i = 0; i < 100; i += 1) {
         itemsArray.push({
           item_name: faker.commerce.productName(),
           item_description: faker.lorem.sentence(3),
-          item_price: faker.commerce.price(1, 100.00, 2, '$'),
+          item_price: faker.commerce.price(1, 50.00, 2, '$'),
           item_option: faker.lorem.words(1),
         });
       }
