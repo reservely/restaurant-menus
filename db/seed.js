@@ -9,7 +9,7 @@ const randomMenuData = [
   'Dessert', 'Bar Menu', 'Kid\'s Menu', 'Vegetarian Menu',
   'Organic Menu', 'Gluten-free Menu', 'Cocktails', 'Drinks',
   'Kosher Menu', 'Halal Menu', 'Secret Menu', 'Prix Fixe',
-  'Low Sugar Menu', 'Tapas', 'Delivery Menu', 'Happy Hour',
+  'Leftovers', 'Tapas', 'Delivery Menu', 'Happy Hour',
   'Late Night Menu', 'Exotic Menu', 'Bizarre Menu', 'Snacks',
   'Senior Menu', 'Microwaved', 'Healthy Menu', 'Wine List',
   'Chef\'s Specials', 'Dog Menu', 'Catering Menu', 'Grilled',
