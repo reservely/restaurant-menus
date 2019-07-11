@@ -16,6 +16,7 @@ const Button = styled.input`
 
 const ActiveButton = styled(Button)`
   border: 2px solid #da3743;
+  padding: calc(8px - 1px) calc(16px - 1px);
 `;
 
 const ButtonMargin = styled.div`
@@ -24,7 +25,7 @@ const ButtonMargin = styled.div`
   margin-top: 16px;
   font-size: 14px;
   color: #2d333f;
-  display: inline
+  display: inline-block;
   *:focus {
     outline: none;
   }
