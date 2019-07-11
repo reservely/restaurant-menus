@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -13,6 +14,10 @@ const Button = styled.input`
   box-sizing: border-box;
 `;
 
+const ActiveButton = styled(Button)`
+  border: 2px solid #da3743;
+`;
+
 const ButtonMargin = styled.div`
   margin-right: 16px;
   background-color: #fff;
@@ -20,13 +25,18 @@ const ButtonMargin = styled.div`
   font-size: 14px;
   color: #2d333f;
   display: inline
+  *:focus {
+    outline: none;
+  }
 `;
-
 
 const MenuButtons = props => (
   props.menus.map((menu, index) => (
-    // eslint-disable-next-line no-underscore-dangle
-    <ButtonMargin><Button type="submit" key={menu._id} onClick={props.onClick()} id={index} value={menu.menu_name} /></ButtonMargin>
+    <ButtonMargin>
+      {parseInt(props.currentButton, 0) === index
+        ? <ActiveButton type="submit" key={menu._id} onClick={props.onClick()} id={index} value={menu.menu_name} />
+        : <Button type="submit" key={menu._id} onClick={props.onClick()} id={index} value={menu.menu_name} />}
+    </ButtonMargin>
   ))
 );
 

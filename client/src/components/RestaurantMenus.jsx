@@ -10,6 +10,8 @@ class RestaurantMenus extends React.Component {
     this.state = {
       restaurantData: {},
       currentMenu: [],
+      currentButton: 0,
+      restaurantID: Math.floor(Math.random() * 100) + 1, // temporary
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -19,11 +21,12 @@ class RestaurantMenus extends React.Component {
   }
 
   loadMenus() {
-    axios.get('http://localhost:3000/1/menus') // hardcoded :restaurant_id for now
+    const { restaurantID } = this.state;
+    axios.get(`http://localhost:3000/${restaurantID}/menus`) // temporary
       .then((res) => {
         this.setState({ restaurantData: res.data[0] });
         if (res.data[0].menus[0]) {
-          this.setState({ currentMenu: res.data[0].menus[0].sections });
+          this.setState({ currentMenu: res.data[0].menus[0].sections, currentButton: 0 });
         }
       })
       .catch((err) => {
@@ -33,18 +36,23 @@ class RestaurantMenus extends React.Component {
 
   handleClick(e) {
     const { restaurantData } = this.state;
-    this.setState({ currentMenu: restaurantData.menus[e.target.id].sections });
+    const { id } = e.target;
+    this.setState({ currentMenu: restaurantData.menus[id].sections, currentButton: id });
   }
 
   render() {
-    const { restaurantData, currentMenu } = this.state;
+    const { restaurantData, currentMenu, currentButton } = this.state;
     return (
       <div>
-        <MenuButtons
-          menus={restaurantData.menus}
-          onClick={() => (this.handleClick)}
-        />
-        <CurrentMenu currentMenu={currentMenu} />
+        <h2>Menu</h2>
+        <div>
+          <MenuButtons
+            menus={restaurantData.menus}
+            currentButton={currentButton}
+            onClick={() => (this.handleClick)}
+          />
+          <CurrentMenu currentMenu={currentMenu} />
+        </div>
       </div>
     );
   }
