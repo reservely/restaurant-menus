@@ -35,6 +35,57 @@ const WebsiteMenu = styled.div`
     text-decoration: none;
   }
 `;
+const MenusContainerCollapsed = styled.div`
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+`;
+const MenuContainerGradient = styled.div`
+  content: " ";
+  z-index: 10;
+  display: block;
+  position: absolute;
+  height: 200px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-image: -webkit-gradient(linear,left bottom,left top,from(#fff),to(rgba(255,255,255,0)));
+  background-image: linear-gradient(to top,#fff,rgba(255,255,255,0));
+  background-color: rgba(255,255,255,.2);
+`;
+const ButtonCenter = styled.div`
+  text-align: center;
+`;
+const ButtonStatic = styled.input`
+  cursor: pointer;
+  margin: 0 auto 32px auto;
+  padding: 16px;
+  font-size: 16px;
+  line-height: 1rem;
+  font-weight: 500;
+  width: 18rem;
+  border-radius: 2px;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid #d8d9db;
+  background: 0 0;
+  box-sizing: border-box;
+  text-align: center;
+`;
+const MenuFooter = styled.div`
+  font-size: 10px;
+  font-weight: 500;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  color: #2d333f;
+  border-top: 1px solid #d8d9db;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+`;
 
 class Container extends React.Component {
   constructor(props) {
@@ -66,7 +117,11 @@ class Container extends React.Component {
       <div>
         <SectionHeader>Menu</SectionHeader>
         {undefined !== restaurantData.menus.length && restaurantData.menus.length === 0
-          ? <WebsiteMenu><a href={restaurantData.website}>View menu on restaurant website</a></WebsiteMenu>
+          ? (
+            <WebsiteMenu>
+              <a href={restaurantData.website}>View menu on restaurant website</a>
+            </WebsiteMenu>
+          )
           : (
             <div>
               <MenuNav>
@@ -76,7 +131,21 @@ class Container extends React.Component {
                   onClick={() => (this.handleClick)}
                 />
               </MenuNav>
-              <CurrentMenu currentMenu={currentMenu} />
+              <MenusContainerCollapsed>
+                <CurrentMenu currentMenu={currentMenu} />
+                <MenuContainerGradient />
+              </MenusContainerCollapsed>
+              <ButtonCenter>
+                <ButtonStatic value="View full menu" />
+              </ButtonCenter>
+              <MenuFooter>
+                <div>
+                  Last updated: July 04, 1776
+                </div>
+                <div>
+                  <img src="./img/provided_by_poedorjandrew.png" alt="poedorjandrew" />
+                </div>
+              </MenuFooter>
             </div>
           )
         }

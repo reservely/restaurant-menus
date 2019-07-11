@@ -16,6 +16,9 @@ const GlobalStyle = createGlobalStyle`
     margin-left: auto;
     margin-right: auto;
   }
+  div {
+    display: block;
+  }
 
 `;
 

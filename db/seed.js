@@ -46,7 +46,7 @@ for (let i = 0; i < 100; i += 1) {
       for (let l = 0; l < itemCount; l += 1) {
         itemsArray.push({
           item_name: faker.commerce.productName(),
-          item_description: faker.lorem.sentence(3),
+          item_description: faker.lorem.sentences(1, 8),
           item_price: faker.commerce.price(1, 50.00, 2, '$'),
           item_option: faker.lorem.words(1),
         });
