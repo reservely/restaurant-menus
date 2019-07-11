@@ -32,10 +32,10 @@ const ButtonMargin = styled.div`
 
 const MenuButtons = props => (
   props.menus.map((menu, index) => (
-    <ButtonMargin>
+    <ButtonMargin key={menu._id}>
       {parseInt(props.currentButton, 0) === index
-        ? <ActiveButton type="submit" key={menu._id} onClick={props.onClick()} id={index} value={menu.menu_name} />
-        : <Button type="submit" key={menu._id} onClick={props.onClick()} id={index} value={menu.menu_name} />}
+        ? <ActiveButton type="submit" onClick={props.onClick()} id={index} value={menu.menu_name} />
+        : <Button type="submit" onClick={props.onClick()} id={index} value={menu.menu_name} />}
     </ButtonMargin>
   ))
 );
