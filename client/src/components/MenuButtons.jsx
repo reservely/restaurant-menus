@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-const BaseButton = styled.input`
+const BaseButton = styled.button`
   -webkit-appearance: button;
   -webkit-writing-mode: horizontal-tb !important;
   text-rendering: auto;
@@ -63,8 +63,8 @@ const MenuButtons = props => (
   props.menus.map((menu, index) => (
     <ButtonMargin key={menu._id}>
       {parseInt(props.currentButton, 0) === index
-        ? <ActiveButton type="submit" onClick={props.onClick()} id={index} value={menu.menu_name} />
-        : <Button type="submit" onClick={props.onClick()} id={index} value={menu.menu_name} />}
+        ? <ActiveButton onClick={props.onClick()} id={index}>{menu.menu_name}</ActiveButton>
+        : <Button onClick={props.onClick()} id={index}>{menu.menu_name}</Button>}
     </ButtonMargin>
   ))
 );

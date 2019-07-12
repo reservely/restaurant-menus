@@ -72,7 +72,7 @@ const MenuContainerGradient = styled.div`
 const ButtonCenter = styled.div`
   text-align: center;
 `;
-const ButtonStatic = styled.input`
+const ButtonStatic = styled.button`
   color: inherit;
   font: inherit;
   cursor: pointer;
@@ -170,7 +170,7 @@ class Container extends React.Component {
                     <MenuContainerGradient />
                   </MenusContainerCollapsed>
                   <ButtonCenter>
-                    <ButtonStatic type="submit" value="View full menu" onClick={this.handleClick} id="collapse" />
+                    <ButtonStatic type="submit" onClick={this.handleClick} id="collapse">View full Menu</ButtonStatic>
                   </ButtonCenter>
                   <MenuFooter>
                     <div>
