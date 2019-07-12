@@ -144,7 +144,7 @@ class Container extends React.Component {
 
   render() {
     const { restaurantData } = this.props;
-    const { currentMenu, currentButton } = this.state;
+    const { currentMenu, currentButton, menuCollapse } = this.state;
     return (
       <div>
         <RestaurantProfileMenu>
@@ -165,13 +165,29 @@ class Container extends React.Component {
                       onClick={() => (this.handleClick)}
                     />
                   </MenuNav>
-                  <MenusContainerCollapsed>
-                    <CurrentMenu currentMenu={currentMenu} />
-                    <MenuContainerGradient />
-                  </MenusContainerCollapsed>
-                  <ButtonCenter>
-                    <ButtonStatic type="submit" onClick={this.handleClick} id="collapse">View full Menu</ButtonStatic>
-                  </ButtonCenter>
+                  {menuCollapse
+                    ? (
+                      <div>
+                        <MenusContainerCollapsed>
+                          <CurrentMenu currentMenu={currentMenu} />
+                          <MenuContainerGradient />
+                        </MenusContainerCollapsed>
+                        <ButtonCenter>
+                          <ButtonStatic type="submit" onClick={this.handleClick} id="collapse">View full Menu</ButtonStatic>
+                        </ButtonCenter>
+                      </div>
+                    )
+                    : (
+                      <div>
+                        <div>
+                          <CurrentMenu currentMenu={currentMenu} />
+                        </div>
+                        <ButtonCenter>
+                          <ButtonStatic type="submit" onClick={this.handleClick} id="collapse">Collapse Menu</ButtonStatic>
+                        </ButtonCenter>
+                      </div>
+                    )
+                  }
                   <MenuFooter>
                     <div>
                       Last updated: July 04, 1776
