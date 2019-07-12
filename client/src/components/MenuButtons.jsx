@@ -30,6 +30,7 @@ const BaseButton = styled.input`
 `;
 
 const Button = styled(BaseButton)`
+  cursor: pointer;
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;
@@ -49,7 +50,7 @@ const ActiveButton = styled(Button)`
 const ButtonMargin = styled.div`
   margin-right: 16px;
   background-color: #fff;
-  margin-top: 16px;
+  margin-top: 13px;
   font-size: 14px;
   color: #2d333f;
   display: inline-block;

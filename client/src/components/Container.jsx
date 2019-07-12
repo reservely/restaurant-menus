@@ -118,6 +118,7 @@ class Container extends React.Component {
     this.state = {
       currentMenu: [],
       currentButton: 0,
+      menuCollapse: true,
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -132,7 +133,13 @@ class Container extends React.Component {
   handleClick(e) {
     const { id } = e.target;
     const { restaurantData } = this.props;
-    this.setState({ currentMenu: restaurantData.menus[id].sections, currentButton: id });
+    if (id === 'collapse') {
+      this.setState(prevState => ({
+        menuCollapse: !prevState.menuCollapse,
+      }));
+    } else {
+      this.setState({ currentMenu: restaurantData.menus[id].sections, currentButton: id });
+    }
   }
 
   render() {
@@ -163,7 +170,7 @@ class Container extends React.Component {
                     <MenuContainerGradient />
                   </MenusContainerCollapsed>
                   <ButtonCenter>
-                    <ButtonStatic value="View full menu" onChange={() => (this.handleClick)} />
+                    <ButtonStatic type="submit" value="View full menu" onClick={this.handleClick} id="collapse" />
                   </ButtonCenter>
                   <MenuFooter>
                     <div>
