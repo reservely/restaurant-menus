@@ -5,7 +5,7 @@ import CurrentMenu from './CurrentMenu';
 import {
   RestaurantProfileMenu, SectionHeader, IconText, Icon, WebsiteMenu, DivFilterNone,
   MenuNav, MenusContainerCollapsed, MenuContainerGradient, ButtonCenter, ButtonStatic,
-  MenuFooter,
+  MenuFooter, ButtonFloat,
 } from '../styles/ContainerStyle';
 
 class Container extends React.Component {
@@ -87,7 +87,13 @@ class Container extends React.Component {
                       <MenuContainerGradient menuCollapse={menuCollapse} />
                     </MenusContainerCollapsed>
                     <ButtonCenter>
-                      <ButtonStatic menuCollapse={menuCollapse} type="submit" onClick={this.handleClick} id="collapse">View full menu</ButtonStatic>
+                      {menuCollapse ? (
+                        <ButtonStatic type="submit" onClick={this.handleClick} id="collapse">View full menu</ButtonStatic>
+                      ) : (
+                        <ButtonFloat type="submit" onClick={this.handleClick} id="collapse">Collapse menu</ButtonFloat>
+                      )
+
+                      }
                     </ButtonCenter>
                   </div>
                   <MenuFooter>

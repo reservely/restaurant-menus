@@ -90,6 +90,16 @@ export const ButtonStatic = styled.button`
   outline: 0;
   }
 `;
+
+export const ButtonFloat = styled(ButtonStatic)`
+  position: fixed;
+  bottom: 32px;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  box-shadow: rgba(51,51,51,.2) 0 2px 4px;
+  background-color: #fff
+`;
+
 export const MenuFooter = styled.div`
   font-size: 10px;
   font-weight: 500;
