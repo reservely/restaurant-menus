@@ -4,11 +4,7 @@ const Restaurant = require('../db/Restaurant.js');
 const app = express();
 const port = 3000;
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
-});
+app.use(express.static('public'));
 
 app.get('/:restaurant_id/menus', (req, res) => (
   Restaurant.find(req.params, (err, data) => {
