@@ -28,11 +28,13 @@ export const SectionHeader = styled.h2`
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 `;
+
 export const MenuNav = styled.div`
   margin-top: calc(-1 * 16px);
   padding-bottom: 16px;
   border-bottom: 1px solid #d8d9db;
 `;
+
 export const MenusContainerCollapsed = styled.div`
   ${props => (props.menuCollapse ? (`
       height: 400px;
@@ -40,6 +42,7 @@ export const MenusContainerCollapsed = styled.div`
       position: relative;
     `) : '')};
 `;
+
 export const MenuContainerGradient = styled.div`
 ${props => (props.menuCollapse ? (
     `"height: 400px; overflow: hidden; position: relative;"
@@ -61,6 +64,7 @@ ${props => (props.menuCollapse ? (
     `
   )};
 `;
+
 export const ButtonCenter = styled.div`
   text-align: center;
 `;
