@@ -42,7 +42,7 @@ for (let i = 0; i < 100; i += 1) {
     const sectionCount = faker.random.number({ min: 1, max: 6 });
     for (let k = 0; k < sectionCount; k += 1) {
       const itemsArray = [];
-      const itemCount = faker.random.number({ min: 1, max: 10 });
+      const itemCount = faker.random.number({ min: 1, max: 12 });
       for (let l = 0; l < itemCount; l += 1) {
         itemsArray.push({
           item_name: faker.commerce.productName(),
