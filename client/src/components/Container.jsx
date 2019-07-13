@@ -89,11 +89,10 @@ class Container extends React.Component {
                     <ButtonCenter>
                       {menuCollapse ? (
                         <ButtonStatic type="submit" onClick={this.handleClick} id="collapse">View full menu</ButtonStatic>
-                      ) : (
-                        <ButtonFloat type="submit" onClick={this.handleClick} id="collapse">Collapse menu</ButtonFloat>
                       )
-
-                      }
+                        : (
+                          <ButtonFloat type="submit" onClick={this.handleClick} id="collapse">Collapse menu</ButtonFloat>
+                        )}
                     </ButtonCenter>
                   </div>
                   <MenuFooter>
