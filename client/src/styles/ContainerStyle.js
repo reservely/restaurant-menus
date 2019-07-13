@@ -39,17 +39,20 @@ export const MenusContainerCollapsed = styled.div`
   position: relative;
 `;
 export const MenuContainerGradient = styled.div`
-  content: " ";
-  z-index: 10;
-  display: block;
-  position: absolute;
-  height: 200px;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-image: -webkit-gradient(linear,left bottom,left top,from(#fff),to(rgba(255,255,255,0)));
-  background-image: linear-gradient(to top,#fff,rgba(255,255,255,0));
-  background-color: rgba(255,255,255,.2);
+${props => (props.menuCollapse ? (
+    `"height: 400px; overflow: hidden; position: relative;"
+    content: " ";
+    z-index: 10;
+    display: block;
+    position: absolute;
+    height: 200px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-image: -webkit-gradient(linear,left bottom,left top,from(#fff),to(rgba(255,255,255,0)));
+    background-image: linear-gradient(to top,#fff,rgba(255,255,255,0));
+    background-color: rgba(255,255,255,.2);
+  `) : '')};
 `;
 export const ButtonCenter = styled.div`
   text-align: center;
@@ -127,5 +130,6 @@ export const WebsiteMenu = styled.div`
 `;
 
 export const Tester = styled.div`
-
+${props => props.menuCollapse ? (
+  "height: 400px; overflow: hidden; position: relative;") : ""};
 `;
