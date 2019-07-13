@@ -34,9 +34,11 @@ export const MenuNav = styled.div`
   border-bottom: 1px solid #d8d9db;
 `;
 export const MenusContainerCollapsed = styled.div`
-  height: 400px;
-  overflow: hidden;
-  position: relative;
+  ${props => (props.menuCollapse ? (`
+      height: 400px;
+      overflow: hidden;
+      position: relative;
+    `) : '')};
 `;
 export const MenuContainerGradient = styled.div`
 ${props => (props.menuCollapse ? (
@@ -52,11 +54,17 @@ ${props => (props.menuCollapse ? (
     background-image: -webkit-gradient(linear,left bottom,left top,from(#fff),to(rgba(255,255,255,0)));
     background-image: linear-gradient(to top,#fff,rgba(255,255,255,0));
     background-color: rgba(255,255,255,.2);
-  `) : '')};
+    `
+  )
+    : `padding: 16px;
+    cursor: default
+    `
+  )};
 `;
 export const ButtonCenter = styled.div`
   text-align: center;
 `;
+
 export const ButtonStatic = styled.button`
   color: inherit;
   font: inherit;
@@ -127,9 +135,4 @@ export const WebsiteMenu = styled.div`
   a:hover {
     text-decoration: none;
   }
-`;
-
-export const Tester = styled.div`
-${props => props.menuCollapse ? (
-  "height: 400px; overflow: hidden; position: relative;") : ""};
 `;

@@ -5,7 +5,7 @@ import CurrentMenu from './CurrentMenu';
 import {
   RestaurantProfileMenu, SectionHeader, IconText, Icon, WebsiteMenu, DivFilterNone,
   MenuNav, MenusContainerCollapsed, MenuContainerGradient, ButtonCenter, ButtonStatic,
-  MenuFooter, Tester,
+  MenuFooter,
 } from '../styles/ContainerStyle';
 
 class Container extends React.Component {
@@ -81,17 +81,15 @@ class Container extends React.Component {
                       onClick={() => (this.handleClick)}
                     />
                   </MenuNav>
-
-                      <div>
-                        <Tester menuCollapse={menuCollapse}>
-                          <CurrentMenu currentMenu={currentMenu} />
-                          <MenuContainerGradient menuCollapse={menuCollapse} />
-                        </Tester>
-                        <ButtonCenter>
-                          <ButtonStatic type="submit" onClick={this.handleClick} id="collapse">View full menu</ButtonStatic>
-                        </ButtonCenter>
-                      </div>
-
+                  <div>
+                    <MenusContainerCollapsed menuCollapse={menuCollapse}>
+                      <CurrentMenu currentMenu={currentMenu} />
+                      <MenuContainerGradient menuCollapse={menuCollapse} />
+                    </MenusContainerCollapsed>
+                    <ButtonCenter>
+                      <ButtonStatic menuCollapse={menuCollapse} type="submit" onClick={this.handleClick} id="collapse">View full menu</ButtonStatic>
+                    </ButtonCenter>
+                  </div>
                   <MenuFooter>
                     <div>
                       Last updated: July 04, 1776
