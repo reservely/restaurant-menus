@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React from 'react';
 import PropTypes from 'prop-types';
 import MenuButtons from './MenuButtons';
@@ -17,7 +18,6 @@ class Container extends React.Component {
       menuCollapse: true,
       anchorCollapse: false,
       isLoading: true,
-      scrollTop: 0,
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
@@ -49,15 +49,16 @@ class Container extends React.Component {
   }
 
   handleScroll(event) {
-    if (!this.state.menuCollapse) {
-      this.state.scrollHeight = Math.floor(event.srcElement.body.scrollHeight / 3);
-      if (this.state.scrollHeight <= event.srcElement.body.scrollTop) {
+    const { menuCollapse, scrollHeight } = this.state;
+    if (!menuCollapse) {
+      this.setState({ scrollHeight: Math.floor(event.srcElement.body.scrollHeight / 3 - 60) });
+      if (scrollHeight <= event.srcElement.body.scrollTop) {
         this.setState({
           anchorCollapse: true,
         });
       }
     }
-    if(this.state.menuCollapse) {
+    if (menuCollapse) {
       this.setState({
         anchorCollapse: false,
       });
