@@ -15,15 +15,25 @@ class Container extends React.Component {
       currentMenu: [],
       currentButton: 0,
       menuCollapse: true,
+      anchorCollapse: false,
+      isLoading: true,
+      scrollTop: 0,
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount() {
     const { restaurantData } = this.props;
-    if (undefined !== restaurantData.menus.length && restaurantData.menus.length !== 0) {
+    this.setState({ isLoading: false });
+    if (restaurantData.menus.length !== 0) {
       this.setState({ currentMenu: restaurantData.menus[0].sections });
     }
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
   }
 
   handleClick(e) {
@@ -38,14 +48,32 @@ class Container extends React.Component {
     }
   }
 
+  handleScroll(event) {
+    if (!this.state.menuCollapse) {
+      this.state.scrollHeight = Math.floor(event.srcElement.body.scrollHeight / 3);
+      if (this.state.scrollHeight <= event.srcElement.body.scrollTop) {
+        this.setState({
+          anchorCollapse: true,
+        });
+      }
+    }
+    if(this.state.menuCollapse) {
+      this.setState({
+        anchorCollapse: false,
+      });
+    }
+  }
+
   render() {
     const { restaurantData } = this.props;
-    const { currentMenu, currentButton, menuCollapse } = this.state;
+    const {
+      currentMenu, currentButton, menuCollapse, anchorCollapse, isLoading,
+    } = this.state;
     return (
       <div>
         <RestaurantProfileMenu>
           <SectionHeader>Menu</SectionHeader>
-          {restaurantData.menus.length === 0
+          {!isLoading && restaurantData.menus.length === 0
             ? (
               <IconText>
                 <Icon>
@@ -91,7 +119,11 @@ class Container extends React.Component {
                         <ButtonStatic type="submit" onClick={this.handleClick} id="collapse">View full menu</ButtonStatic>
                       )
                         : (
-                          <ButtonFloat type="submit" onClick={this.handleClick} id="collapse">Collapse menu</ButtonFloat>
+                          anchorCollapse ? (
+                            <ButtonStatic type="submit" onClick={this.handleClick} id="collapse">Collapse menu</ButtonStatic>
+                          ) : (
+                            <ButtonFloat menuCollapse={menuCollapse} type="submit" onClick={this.handleClick} id="collapse">Collapse menu</ButtonFloat>
+                          )
                         )}
                     </ButtonCenter>
                   </div>

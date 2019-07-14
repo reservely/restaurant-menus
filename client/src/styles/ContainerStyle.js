@@ -96,12 +96,12 @@ export const ButtonStatic = styled.button`
 `;
 
 export const ButtonFloat = styled(ButtonStatic)`
-  position: fixed;
-  bottom: 32px;
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  box-shadow: rgba(51,51,51,.2) 0 2px 4px;
-  background-color: #fff
+    position: fixed;
+    bottom: 32px;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    box-shadow: rgba(51,51,51,.2) 0 2px 4px;
+    background-color: #fff
 `;
 
 export const MenuFooter = styled.div`
