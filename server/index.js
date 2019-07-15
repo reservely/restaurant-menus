@@ -2,7 +2,7 @@ const express = require('express');
 const Restaurant = require('../db/Restaurant.js');
 
 const app = express();
-const port = 3000;
+const port = 3003;
 
 app.use(express.static('public'));
 
