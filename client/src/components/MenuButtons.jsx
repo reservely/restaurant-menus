@@ -1,9 +1,14 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
+import { ButtonMargin, ActiveButton, Button } from '../styles/MenuButtonsStyle';
 
 const MenuButtons = props => (
   props.menus.map((menu, index) => (
-    // eslint-disable-next-line no-underscore-dangle
-    <input type="submit" key={menu._id} onClick={props.onClick()} id={index} value={menu.menu_name} />
+    <ButtonMargin key={menu._id}>
+      {parseInt(props.currentButton, 0) === index
+        ? <ActiveButton onClick={props.onClick()} id={index}>{menu.menu_name}</ActiveButton>
+        : <Button onClick={props.onClick()} id={index}>{menu.menu_name}</Button>}
+    </ButtonMargin>
   ))
 );
 

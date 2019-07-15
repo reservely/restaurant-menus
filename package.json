@@ -24,7 +24,8 @@
     "nodemon": "^1.19.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
