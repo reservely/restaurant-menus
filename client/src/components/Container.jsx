@@ -74,7 +74,7 @@ class Container extends React.Component {
       <div>
         <RestaurantProfileMenu>
           <SectionHeader>Menu</SectionHeader>
-          {!isLoading && restaurantData.menus.length === 0
+          {!isLoading && undefined !== restaurantData.menus && restaurantData.menus.length === 0
             ? (
               <IconText>
                 <Icon>
