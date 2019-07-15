@@ -20,7 +20,7 @@ class Menus extends React.Component {
 
   loadMenus() {
     const { restaurantID } = this.state;
-    axios.get(`http://localhost:3003/${restaurantID}/menus`) // temporary
+    axios.get(`/${restaurantID}/menus`) // temporary
       .then((res) => {
         this.setState({ restaurantData: res.data[0] });
         this.setState({ isLoading: false });
