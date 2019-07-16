@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { GlobalStyle, Wrapper } from '../styles/MenusStyle';
+import { SectionHeader } from '../styles/ContainerStyle';
 import Container from './Container';
 
 
@@ -37,7 +38,7 @@ class Menus extends React.Component {
       <Wrapper>
         <GlobalStyle />
         {isLoading
-          ? <div>Loading...</div>
+          ? <SectionHeader>Menu</SectionHeader>
           : <Container restaurantData={restaurantData} />}
       </Wrapper>
     );
