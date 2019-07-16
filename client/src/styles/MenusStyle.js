@@ -29,7 +29,7 @@ export const Wrapper = styled.div`
     -webkit-font-smoothing: antialiased;
     background-color: #FFF;
     color: black;
-    display: block;
+    display: flex;
     font-size: 100%;
     margin: 8px;
     width: 640px;

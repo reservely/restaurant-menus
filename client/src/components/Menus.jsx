@@ -34,14 +34,12 @@ class Menus extends React.Component {
   render() {
     const { isLoading, restaurantData } = this.state;
     return (
-      <div>
-        <Wrapper>
-          <GlobalStyle />
-          {isLoading
-            ? <div>Loading...</div>
-            : <Container restaurantData={restaurantData} />}
-        </Wrapper>
-      </div>
+      <Wrapper>
+        <GlobalStyle />
+        {isLoading
+          ? <div>Loading...</div>
+          : <Container restaurantData={restaurantData} />}
+      </Wrapper>
     );
   }
 }
