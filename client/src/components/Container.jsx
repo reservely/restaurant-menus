@@ -133,7 +133,7 @@ class Container extends React.Component {
                       Last updated: July 04, 1776
                     </div>
                     <div>
-                      <img src="./img/provided_by_poedorjandrew.png" alt="poedorjandrew" />
+                      <img src="http://localhost:3003/img/provided_by_poedorjandrew.png" alt="poedorjandrew" />
                     </div>
                   </MenuFooter>
                 </DivFilterNone>
