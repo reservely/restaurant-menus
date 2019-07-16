@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -21,7 +21,10 @@ export const GlobalStyle = createGlobalStyle`
         url('./fonts/Brandon_txt_bld-webfont.woff') format('woff');
     font-weight: 700;
   }
-  body {
+  
+`;
+
+export const Wrapper = styled.div`
     font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
     -webkit-font-smoothing: antialiased;
     background-color: #FFF;
@@ -33,9 +36,4 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0 1rem;
     margin-left: auto;
     margin-right: auto;
-  }
-  div {
-    display: block;
-  }
-
 `;

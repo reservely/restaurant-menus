@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { GlobalStyle } from '../styles/MenusStyle';
+import { GlobalStyle, Wrapper } from '../styles/MenusStyle';
 import Container from './Container';
 
 
@@ -35,10 +35,12 @@ class Menus extends React.Component {
     const { isLoading, restaurantData } = this.state;
     return (
       <div>
-        <GlobalStyle />
-        {isLoading
-          ? <div>Loading...</div>
-          : <Container restaurantData={restaurantData} />}
+        <Wrapper>
+          <GlobalStyle />
+          {isLoading
+            ? <div>Loading...</div>
+            : <Container restaurantData={restaurantData} />}
+        </Wrapper>
       </div>
     );
   }
