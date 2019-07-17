@@ -33,6 +33,7 @@ export const Button = styled(BaseButton)`
   line-height: 20px;
   font-weight: 500;
   color: #2d333f;
+  background: #FFF;
   border: 1px solid #d8d9db;
   border-radius: 2px;
   padding: 8px 16px;

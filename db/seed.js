@@ -33,17 +33,17 @@ function shuffle(a) {
 
 for (let i = 0; i < 100; i += 1) {
   const menusArray = [];
-  const menuCount = faker.random.number({ min: 0, max: 6 });
+  const menuCount = faker.random.number({ min: 1, max: 6 });
   let randomMenuDataShuffled = [];
   if (menuCount > 0) {
     randomMenuDataShuffled = shuffle(randomMenuData);
   }
   for (let j = 0; j < menuCount; j += 1) {
     const sectionsArray = [];
-    const sectionCount = faker.random.number({ min: 1, max: 6 });
+    const sectionCount = faker.random.number({ min: 1, max: 8 });
     for (let k = 0; k < sectionCount; k += 1) {
       const itemsArray = [];
-      const itemCount = faker.random.number({ min: 1, max: 12 });
+      const itemCount = faker.random.number({ min: 1, max: 16 });
       for (let l = 0; l < itemCount; l += 1) {
         itemsArray.push({
           item_name: faker.commerce.productName(),

@@ -16,7 +16,7 @@ class Container extends React.Component {
       currentMenu: [],
       currentButton: 0,
       menuCollapse: true,
-      anchorCollapse: false,
+      anchorCollapse: true,
       isLoading: true,
     };
     this.handleClick = this.handleClick.bind(this);
@@ -49,20 +49,20 @@ class Container extends React.Component {
   }
 
   handleScroll(event) {
-    const { menuCollapse, scrollHeight } = this.state;
-    if (!menuCollapse) {
-      this.setState({ scrollHeight: Math.floor(event.srcElement.body.scrollHeight / 3 - 60) });
-      if (scrollHeight <= event.srcElement.body.scrollTop) {
-        this.setState({
-          anchorCollapse: true,
-        });
-      }
-    }
-    if (menuCollapse) {
-      this.setState({
-        anchorCollapse: false,
-      });
-    }
+    // const { menuCollapse, scrollHeight } = this.state;
+    // if (!menuCollapse) {
+    //   this.setState({ scrollHeight: Math.floor(event.srcElement.body.scrollHeight / 3 - 60) });
+    //   if (scrollHeight <= event.srcElement.body.scrollTop) {
+    //     this.setState({
+    //       anchorCollapse: true,
+    //     });
+    //   }
+    // }
+    // if (menuCollapse) {
+    //   this.setState({
+    //     anchorCollapse: false,
+    //   });
+    // }
   }
 
   render() {
