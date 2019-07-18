@@ -7,7 +7,7 @@ import {
 
 const CurrentMenu = (props) => {
   const { currentMenu } = props;
-  const curr = currentMenu.map(menu => (
+  const renderedMenu = currentMenu.map(menu => (
     <MenuSection key={menu._id}>
       <MenuSectionHeader>
         <MenuSectionTitle>
@@ -40,7 +40,7 @@ const CurrentMenu = (props) => {
 
   return (
     <div>
-      {curr}
+      {renderedMenu}
     </div>
   );
 };

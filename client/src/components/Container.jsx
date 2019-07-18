@@ -20,7 +20,7 @@ class Container extends React.Component {
       isLoading: true,
     };
     this.handleClick = this.handleClick.bind(this);
-    this.handleScroll = this.handleScroll.bind(this);
+    // this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount() {
@@ -29,12 +29,12 @@ class Container extends React.Component {
     if (restaurantData.menus.length !== 0) {
       this.setState({ currentMenu: restaurantData.menus[0].sections });
     }
-    window.addEventListener('scroll', this.handleScroll);
+    // window.addEventListener('scroll', this.handleScroll);
   }
 
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener('scroll', this.handleScroll);
+  // }
 
   handleClick(e) {
     const { id } = e.target;
@@ -48,22 +48,22 @@ class Container extends React.Component {
     }
   }
 
-  handleScroll(event) {
-    // const { menuCollapse, scrollHeight } = this.state;
-    // if (!menuCollapse) {
-    //   this.setState({ scrollHeight: Math.floor(event.srcElement.body.scrollHeight / 3 - 60) });
-    //   if (scrollHeight <= event.srcElement.body.scrollTop) {
-    //     this.setState({
-    //       anchorCollapse: true,
-    //     });
-    //   }
-    // }
-    // if (menuCollapse) {
-    //   this.setState({
-    //     anchorCollapse: false,
-    //   });
-    // }
-  }
+  // handleScroll(event) {
+  // const { menuCollapse, scrollHeight } = this.state;
+  // if (!menuCollapse) {
+  //   this.setState({ scrollHeight: Math.floor(event.srcElement.body.scrollHeight / 3 - 60) });
+  //   if (scrollHeight <= event.srcElement.body.scrollTop) {
+  //     this.setState({
+  //       anchorCollapse: true,
+  //     });
+  //   }
+  // }
+  // if (menuCollapse) {
+  //   this.setState({
+  //     anchorCollapse: false,
+  //   });
+  // }
+  // }
 
   render() {
     const { restaurantData } = this.props;
@@ -130,10 +130,10 @@ class Container extends React.Component {
                   </div>
                   <MenuFooter>
                     <div>
-                      Last updated: July 04, 1776
+                      Last updated: July 04, 2019
                     </div>
                     <div>
-                      <img src="http://localhost:3003/img/provided_by_poedorjandrew.png" alt="poedorjandrew" />
+                      <img src="https://a.singleplatform.com/OpenTable/marlowe/provided_by.png?sp_dt=20190425" alt="singleplatform" />
                     </div>
                   </MenuFooter>
                 </DivFilterNone>
