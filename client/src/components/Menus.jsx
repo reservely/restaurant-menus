@@ -1,3 +1,5 @@
+/* eslint-disable radix */
+/* eslint-disable no-restricted-globals */
 import React from 'react';
 import axios from 'axios';
 import { GlobalStyle, Wrapper } from '../styles/MenusStyle';
@@ -8,10 +10,12 @@ import Container from './Container';
 class Menus extends React.Component {
   constructor(props) {
     super(props);
+    let id = location.pathname.slice(1);
+    id = (id !== '') ? parseInt(id) : Math.floor(Math.random() * 100);
     this.state = {
       restaurantData: {},
       isLoading: true,
-      restaurantID: Math.floor(Math.random() * 100) + 1, // temporary
+      restaurantID: id,
     };
   }
 
@@ -21,7 +25,7 @@ class Menus extends React.Component {
 
   loadMenus() {
     const { restaurantID } = this.state;
-    axios.get(`/${restaurantID}/menus`) // temporary
+    axios.get(`/${restaurantID}/menus`)
       .then((res) => {
         this.setState({ restaurantData: res.data[0] });
         this.setState({ isLoading: false });
