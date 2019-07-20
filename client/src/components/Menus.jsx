@@ -2,7 +2,7 @@
 /* eslint-disable no-restricted-globals */
 import React from 'react';
 import axios from 'axios';
-import { GlobalStyle, Wrapper } from '../styles/MenusStyle';
+import { GlobalStyle, Wrapper, FlexWrapper } from '../styles/MenusStyle';
 import { SectionHeader } from '../styles/ContainerStyle';
 import Container from './Container';
 
@@ -39,12 +39,15 @@ class Menus extends React.Component {
   render() {
     const { isLoading, restaurantData } = this.state;
     return (
-      <Wrapper>
-        <GlobalStyle />
-        {isLoading
-          ? <SectionHeader>Menu</SectionHeader>
-          : <Container restaurantData={restaurantData} />}
-      </Wrapper>
+      <FlexWrapper>
+        <Wrapper>
+          <GlobalStyle />
+          {isLoading
+            ? <SectionHeader>Menu</SectionHeader>
+            : <Container restaurantData={restaurantData} />}
+        </Wrapper>
+      </FlexWrapper>
+
     );
   }
 }

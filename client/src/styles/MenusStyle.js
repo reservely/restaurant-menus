@@ -26,11 +26,15 @@ export const Wrapper = styled.div`
     -webkit-font-smoothing: antialiased;
     background-color: #FFF;
     color: black;
-    display: flex;
+    display: block;
     font-size: 100%;
     margin: 8px;
     width: 608px;
     padding: 0 1rem;
     margin-left: auto;
     margin-right: auto;
+`;
+
+export const FlexWrapper = styled.div`
+    display: flex;
 `;
