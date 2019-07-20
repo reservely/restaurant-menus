@@ -1,11 +1,11 @@
 version: "3"
 services:
   menus:
-    container_name: menus
+    container_name: andrewpoon/reservly:menus
     restart: always
     build: .
     ports:
-      - "3003:3003"
+      - "80:3003"
     depends_on:
       - mongo
   mongo:
@@ -17,3 +17,4 @@ services:
       - ./db
     ports:
       - "27017:27017" 
+    command: "mongod --smallfiles"

@@ -27,7 +27,7 @@ export const BaseButton = styled.button`
   font: inherit;
 `;
 
-export const Button = styled(BaseButton)`
+export const MenuButton = styled(BaseButton)`
   cursor: pointer;
   font-size: 14px;
   line-height: 20px;
@@ -41,7 +41,7 @@ export const Button = styled(BaseButton)`
   box-sizing: border-box;
 `;
 
-export const ActiveButton = styled(Button)`
+export const ActiveButton = styled(MenuButton)`
   border: 2px solid #da3743;
   padding: calc(8px - 1px) calc(16px - 1px);
 `;
