@@ -2,8 +2,7 @@
 /* eslint-disable no-restricted-globals */
 import React from 'react';
 import axios from 'axios';
-import { GlobalStyle, Wrapper, FlexWrapper } from '../styles/MenusStyle';
-import { SectionHeader } from '../styles/ContainerStyle';
+import { GlobalStyle, Wrapper } from '../styles/MenusStyle';
 import Container from './Container';
 
 
@@ -13,8 +12,7 @@ class Menus extends React.Component {
     let id = location.pathname.slice(1);
     id = (id !== '') ? parseInt(id) : Math.floor(Math.random() * 100);
     this.state = {
-      restaurantData: {},
-      isLoading: true,
+      restaurantData: null,
       restaurantID: id,
     };
   }
@@ -28,7 +26,6 @@ class Menus extends React.Component {
     axios.get(`/${restaurantID}/menus`)
       .then((res) => {
         this.setState({ restaurantData: res.data[0] });
-        this.setState({ isLoading: false });
       })
       .catch((err) => {
         console.log(err);
@@ -37,17 +34,16 @@ class Menus extends React.Component {
 
 
   render() {
-    const { isLoading, restaurantData } = this.state;
-    return (
-      <FlexWrapper>
-        <Wrapper>
-          <GlobalStyle />
-          {isLoading
-            ? <SectionHeader>Menu</SectionHeader>
-            : <Container restaurantData={restaurantData} />}
-        </Wrapper>
-      </FlexWrapper>
+    const { restaurantData } = this.state;
+    if (!restaurantData) {
+      return <div />;
+    }
 
+    return (
+      <Wrapper>
+        <GlobalStyle />
+        <Container restaurantData={restaurantData} />
+      </Wrapper>
     );
   }
 }

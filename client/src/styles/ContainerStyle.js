@@ -3,8 +3,10 @@ import styled from 'styled-components';
 
 export const RestaurantProfileMenu = styled.section`
   position: relative;
-  display: block;
   -webkit-locale: "en";
+  display: block;
+  justify-content: space-around;
+  align-items: flex-start;
 `;
 
 export const DivFilterNone = styled.div`
@@ -96,12 +98,14 @@ export const ButtonStatic = styled.button`
 `;
 
 export const ButtonFloat = styled(ButtonStatic)`
-    position: fixed;
+    position: -webkit-sticky;
+    position: sticky;
     bottom: 32px;
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
     box-shadow: rgba(51,51,51,.2) 0 2px 4px;
     background-color: #fff
+    
 `;
 
 export const MenuFooter = styled.div`

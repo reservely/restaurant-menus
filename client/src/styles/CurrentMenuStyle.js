@@ -15,13 +15,6 @@ export const MenuSectionTitle = styled.div`
   line-height: 24px;
   font-weight: 500;
 `;
-// export const MenuSectionDescription = styled.div`
-//   font-size: 14px;
-//   line-height: 20px;
-//   font-weight: 500;
-//   margin-top: 16px;
-//   margin-bottom: 0;
-// `;
 export const MenuItems = styled.div`
   -webkit-column-count: 2;
   -moz-column-count: 2;
@@ -49,7 +42,3 @@ export const MenuDescription = styled.p`
   margin-bottom: 0;
   font-weight: 400;
 `;
-// export const MenuVariation = styled.div`
-//   margin: 0;
-//   padding: 0;
-// `;

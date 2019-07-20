@@ -13,9 +13,6 @@ const CurrentMenu = (props) => {
         <MenuSectionTitle>
           { menu.section_name }
         </MenuSectionTitle>
-        {/* <MenuSectionDescription>
-          { menu.section_description }
-        </MenuSectionDescription> */}
       </MenuSectionHeader>
       <MenuItems>
         { menu.items.map(item => (
@@ -29,9 +26,6 @@ const CurrentMenu = (props) => {
             <MenuDescription>
               {item.item_description}
             </MenuDescription>
-            {/* <MenuVariation>
-              {item.item_option}
-            </MenuVariation> */}
           </MenuItem>
         ))}
       </MenuItems>

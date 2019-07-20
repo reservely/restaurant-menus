@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoUri = 'mongodb://172.17.0.2/reservly';
+const mongoUri = 'mongodb://localhost/reservly';
 mongoose.connect(mongoUri, { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 
