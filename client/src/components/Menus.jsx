@@ -35,9 +35,6 @@ class Menus extends React.Component {
 
   render() {
     const { restaurantData } = this.state;
-    if (!restaurantData) {
-      return <div />;
-    }
 
     return (
       <Wrapper>

@@ -2,7 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MenuButtons from './MenuButtons';
-import CurrentMenu from './CurrentMenu';
+import CurrentMenuController from './CurrentMenuController';
+
 import {
   RestaurantProfileMenu, SectionHeader, DivFilterNone,
   MenuNav, MenusContainerCollapsed, MenuContainerGradient, ButtonCenter, ButtonStatic,
@@ -19,14 +20,16 @@ class Container extends React.Component {
       anchorCollapse: true,
     };
     this.handleClick = this.handleClick.bind(this);
-    // this.handleScroll = this.handleScroll.bind(this);
+    this.handleCurrentMenu = this.handleCurrentMenu.bind(this);
   }
 
   componentDidMount() {
+  }
+
+  handleCurrentMenu() {
     const { restaurantData } = this.props;
     this.setState({ currentMenu: restaurantData.menus[0].sections });
   }
-
 
   handleClick(e) {
     const { id } = e.target;
@@ -53,14 +56,18 @@ class Container extends React.Component {
             <DivFilterNone>
               <MenuNav>
                 <MenuButtons
-                  menus={restaurantData.menus}
+                  restaurantData={restaurantData}
                   currentButton={currentButton}
                   onClick={() => (this.handleClick)}
                 />
               </MenuNav>
               <div>
                 <MenusContainerCollapsed menuCollapse={menuCollapse}>
-                  <CurrentMenu currentMenu={currentMenu} />
+                  <CurrentMenuController
+                    currentMenu={currentMenu}
+                    handleCurrentMenu={this.handleCurrentMenu}
+                    restaurantData={restaurantData}
+                  />
                   <MenuContainerGradient menuCollapse={menuCollapse} />
                 </MenusContainerCollapsed>
                 <ButtonCenter>
